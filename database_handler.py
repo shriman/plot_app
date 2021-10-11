@@ -30,5 +30,16 @@ def get_cities():
     return db_session.query(City)
 
 
+# ToDo: type annotations
+def get_city_temperature(city):
+    return [month.average_temperature for month in city.city_meteo_data]
+
+
+def get_city_humidity(city):
+    return [month.average_humidity for month in city.city_meteo_data]
+
+
 data = get_cities()
 
+MONTHS = [record.month for record in data[0].city_meteo_data]
+CITIES = [city.city_name for city in data]
