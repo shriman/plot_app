@@ -15,6 +15,8 @@ class City(Base):
     city_name = Column(String)
     city_climate = Column(String)
 
+    city_meteo_data = relationship("Meteo", backref="city")
+
 
 # Table meteo
 class Meteo(Base):

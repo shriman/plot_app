@@ -17,6 +17,5 @@ def main_plot():
     return send_file(img, mimetype='image/png', cache_timeout=0)
 
 
-
 if __name__ == '__main__':
     app.run()
